@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+
+  vars:
+    # Define the instance IDs to be stopped, started
+    instance_ids: 
+      - 'i-016e0e36d5c8ce376'
+    region: us-east-1
+
+  tasks:
+    - debug:
+       msg: "This is testing_import_playbook1.yml" 
+
+    - name: Stop the sandbox instances
+      ec2:
+        instance_ids: '{{ instance_ids }}'
+        region: '{{ region }}'
+        state: stopped
+
+
