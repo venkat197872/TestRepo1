@@ -19,4 +19,4 @@ phases:
       - "rm terraform.zip"
   build:
     commands:
-      - "echo Hello Krishna"
+      - "echo Hello Krishna hello Niranjana cute little kid."
