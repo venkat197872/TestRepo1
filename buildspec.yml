@@ -1,0 +1,22 @@
+version: 0.2
+
+env:
+  variables:
+    CODE_SRC_DIR: "."
+    TF_VERSION: "1.1.6"
+    TF_ROOT_DIR: "DeployEc2"
+    TF_Output_S3: "aws-uscp-tf-releases"
+    EC2_TF_Tag: "TfS3Path"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
+      - "unzip -o terraform.zip"
+      - "mv terraform /bin"
+      - "rm terraform.zip"
+  build:
+    commands:
+      - "echo Hello Krishna"
